@@ -1,0 +1,353 @@
+Symmetric keys:
+---------------
+
+1. generate symmetric key --> 94 
+2. encrypt the original message with symmetric key --> m82rY?8tFYt9l?f2l28X,L
+3. decyrpy the original message from encrtyped data --> welcome to simplilearn
+
+Asymmetric keys: public key encryption
+----------------
+
+User1 ---> pubKa, privKa ---> 34, 125
+
+User2 ---> pubKb, privKb -->  63, 96
+
+share these keys offline
+
+bankA, bankB ----> settlement
+
+
+
+100 banks:
+----------
+
+bankA ----> bankB, bankC, bankD
+
+99 pub keys of other banks
+
+1M ----> diff pub/priv
+
+RSA and ECDSA: encryption alogrithms
+
+RSA ---> 2048 bits
+
+ECDSA ---> 256/512 bits
+
+Digital signatures: encryption and non-repudiation
+-------------------
+
+
+0fba830d063ed63de64dd2dd2a97fae91dbf0a98cdc2b585c534e9ff2f27038e
+
+
+
+67b8ec002b4c9b482497caea9ff7d939de2203c2c786eb5c8280b6a8f49ba805
+
+
+
+
+original message ---> welcome to simplilearn
+
+Calculate hash of original message ---> hash (welcome to simplilearn) ---> 8jiul9o87097907098uihihiuhui
+
+sign the hash with sender private key ----> privKsender(8jiul9o87097907098uihihiuhui)
+
+{original message, digital signature} to recepient
+
+
+recepient will verify the signature of userA with pubKsender ---> verification
+
+orinal message "welcome to simplilearn"
+
+hash of message hash (welcome to simplilearn) ---> 8jiul9o87097907098uihihiuhui
+
+
+(36,123)
+
+
+Hash is more powerful than encryption ----->
+
+
+
+encrypt and decryption are viceversa ---->
+
+
+Hashes: SHA256, SHA512
+
+
+ENCRYPT: RSA, ECDSA, EDDSA etc
+
+
+user will send both message, hash (welcome to simplilearn, 8jiul9o87097907098uihihiuhui)
+
+
+recepeint gets, he will comput the hash from input and validate the hash calculated is same as hash received
+
+ hash (welcome to simplilearn) ---> 8jiul9o87097907098uihihiuhui)
+
+
+func digitalSign()
+
+{
+
+ createSIgn()
+ verifySign()
+
+}
+
+
+func createSIgn(input string) output {
+
+ hash = sha256
+
+}
+
+
+txn payload (userA,userB,100)
+hash of payload (8798789kjnk;oj;kjk)
+
+(txn payload, hash of payload)
+
+calculate hash(txn payload) === 8798789kjnk;oj;kjk
+
+
+
+
+func verifySign(input string) bool {
+
+ hash = sha256
+ input
+ validate hashcomputed == hashreceived
+
+ return true
+}
+
+
+Structire of block:
+-------------------------
+
+
+type Block struct {
+
+ blocknum int (1)
+ blockversion int/float (1.0)
+ merkle hash  string    ----(current block) ---> mining process to validate txn
+ previous hash string   ----(next block)
+
+}
+
+
+99
+
+
+99 98    97 96   95 94 -----> until single root hash is derived -----> merkle root hash
+
+
+
+how this merkle root hash will be decoded to access the data of last block? 2. how to know when the previous block is being tampered by the hash? 3.Suppose we need to access one txn details so will we use merkle root?
+
+
+
+nodes in the network:
+---------------------
+
+func calcConsensus (input)
+
+{
+
+}
+
+
+Node1 ----> {attack (n2), attack (n3), attack(n4), attack(G)}
+
+Node2 ----> {attack (n1), noattack(n3), attack(n4), attack(G)}
+
+ {
+
+   compute no of votes recived for attack
+   compute no of votes recived for noattack
+
+   v1 = 3, v2= 1
+   if v1 > v2 
+    set message = attack
+   node3 ---> faulty
+
+}
+
+Node3 ----> {attack (n1), attack (n2), attack(n4), attack(G)} ---> blacklisted and no eligble for consensus
+
+Node4 --->  {attack (n1), attack (n2), noattack(n3), attack(G)}
+
+
+
+100/1000s of nodes   (600 nodes ---> faulty messages/blocks)
+
+51% attack ----> public blockchians
+
+public:
+--------------
+proof of work
+
+proof of stake
+
+
+permison:
+-----------
+RAFT, Kafka, smartBFT
+
+
+
+
+Client applications: submitting txn to the DLT network
+--------------------
+
+
+criteria to create blocks is 100 txn/2MB/100 sec --- creating blocks
+
+txn pools:  all the txn are collected and stored where the miners can pick and validate
+----------
+(250 txn)
+
+block1 ---> 1 to 100
+
+validate these 100 txn, solve the math puzzle to create blocks
+
+
+usearA ------> 100 BTC ---> userB
+
+ a. validate wallet balance of userA
+ b. validate if its backdated
+ c. validate if the recepient address is active/inactive
+
+Puzzle solving:  POW
+----------------
+
+ Bitcoin protocol will allocate the mathematical puzzle
+ 
+ 1-100    ---> 20 zeros (quite heavy computation)
+ 101- 1000 ---> 200 zeros
+ 1000 - 10000 ----> 20000 zeros
+
+ finding out a nonce value (random number) that will generate a merkle hash of all txn with some zeros prefixed (set by the network for difficulty)
+
+ calculate merkle hash for block1 with prefix of 20 zeros
+
+ merkle hash for 100 txn 
+
+ H(100+99) H(98+97) --------- H(1+2+3+-----100) ---->   ABCXYZ123456
+
+ find out a random number (nonce) which will give ===>   00000000000000000000ABCXYZ123456
+
+
+
+hash (welcome to simplilearn + random number) ---->  (0000 + 17afb62103002cb23473ed1f74b631f0)
+
+ for (i=0;i<99999999999999;i++)
+
+   {
+      compute value of i (nonce), which will generate the 4 zeros in the beginnin of hsh
+
+   }
+
+ 
+100 miners ---> only 1 miner will get the reward for creating blocks
+
+6.25 BTC is the reward fee
+
+
+100 txn --->
+ 
+
+Miner Pool1: (m1, m2, m3, m4, m5)
+
+m1 ---> 1 to 1M
+
+m2 ---> 1M to 5M
+
+m3 ---> 5M to 8M
+
+
+
+
+originl hash -----> f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a
+
+original message and a nonce will result in ---> 0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a
+
+
+miners are generating 10^15 or 10^18 hash/sec ---> current hashrate ----> 15 mins to add new block to the network
+
+
+
+
+Proof of stake:
+---------------
+
+a. Miners have to invest their stake in the protocol (32 ETH)
+b. NO need of solving block puzzle/nonce
+c. miners will get txn fee as reward (txn charged for end users)
+d. no block fee rewards
+
+
+35 validators: round robin based miner/validator elction for current round
+--------------
+
+1st ---> V1
+
+slashing mechanism is used to blacklist the nodes
+
+ (32 ETH)  ----> high value
+ 0.01/0.5 ---->
+
+
+a ---> 5 eth -----> 0.1 eth
+b ---> 2 eth -----> 0.05 eth
+
+m1 ----> B1
+
+ {m2, m3, m4, m5} ----> valid
+
+m6 ----> B2 (2 invalid txn)
+
+ {m1, m2, ...m5} ----> txn pool and validate all txn and blocks
+
+ 
+
+Proof of elapsed time ----> Intel Corp, HYpreledger Sawtooth(framework)
+
+nodejs, linux, docker, web3/ether js 
+
+URLs:
+------
+https://www.ibm.com/downloads/cas/36KBMBOG
+https://blockchaintrainingalliance.com/pages/glossary-of-blockchain-terms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
+
+
+
+
+
