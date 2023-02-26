@@ -1,0 +1,403 @@
+Immutable --> Once data is inserted into the ledger, it cant be modified
+
+
+normal --> insert username, age, department into employee table (Create, Read, Update, Delete)
+blockchain --> we can only insert data. update and delete is not possble.
+
+
+Consensus --> Establishment of agreement among multiple nodes in the system
+
+
+crypto exchange --> similar to normal exchnages, we trade digital coins (eth, sol, pol)
+
+IOTA  --> Framework for IOT use case implementation (device - device communication secured on the ledger)
+
+public vs private blockchains:
+-------------------------------
+
+public  --> involves crypto, high txn fees, data is visible to everyone 
+
+private --> hyperledger (elimintaes crypto tokens, high tx fee) 
+
+(bank of 6 in a single network) ---> private blockchain ---> decentalized
+
+
+Banks want to form a Credit history of account holders (Credit Ledger) ---> 
+
+Use case: Credit ledger
+
+Problem statement: Banks takes long turn around time to sanction loans and also depend on third party aganecies for cibil score (3-5 business days)
+
+Solution approach: 
+
+Banks will coordinate among them self to ditribute each others data on the status of active loans/inactive/high credit users
+
+write a smart contract by building these logics
+
+customer id, crdit score indicator, eligible
+
+
+Smart contract:
+---------------- 
+
+variables/identifiers to be shared/stored on the ledger
+
+private data collections (current loan amount, no of emi due)
+
+public 
+
+var 
+
+ ( username
+   customer id 
+   credit indicator
+   eligible status )
+
+methods
+
+ queryCreditdata()
+ eligiCriteria()
+ Loanstatus()
+
+
+tranactions between two different blockchain networks ----> Interoperability 
+
+public blockchains ---> Oracles and Bridges
+
+
+private blockchains ---> solution (bridges that enable data transfer b/w multiple networks)
+
+
+
+network 1 ----- 6 banks
+
+Intermediate network (even the bridges are to be truly distributed) --- ??
+
+network 2 ----- 4 Insurance firms (claim verification)
+
+
+Node is nothing but a server/machine/system --> which validtaes and records the data
+
+HYperledger Cactus ---> Interoperability issues
+
+
+
+Node ---- Machine
+
+Ledger --- File system in the machine
+
+Block --- part of this file system in the machine
+
+multiple blocks will form the ledger
+
+
+
+https://lms.simplilearn.com/
+
+
+
+Money transfer b/w Banks:
+--------------------------
+
+
+1. Bank1 -- sender bank
+
+2. Bank2 -- receiver bank
+
+
+Banks employ a regulator/intermediatary which establishes the trust among them
+
+
+bank1 --> 1000 CR
+
+
+Intermediatary ----> which have some funds as collateral stored for all banks (bank have to deploy a minimum guarantee fee of 5000 CR)
+
+(1000 cr, bank1, bank2)
+ 
+ (5000 cr)
+
+
+bank2 --> 1000 CR (bankruptcy)
+
+
+Data structure of a block:
+--------------------------
+
+type Block 
+
+{
+
+ Header
+  var current hash string
+  var previous hash string
+  var timestamp timestamp
+  var block number int
+
+ Body
+  transactions [] string
+
+ chain *Block
+
+}
+
+
+Sequence of such blocks linked by previous hash forms blockchain
+
+Linked List of blocks appended to each other by Hashes
+
+
+Public Blockchain:
+
+ Bitcoin ---> used as only crypto token, no entreprises can build appications on top of bitcoin(lacks the feature of smart contracts)
+ Ethereum --> which is an alternative for bitcoin, which also supports the business logic to embed into the network(smart contract) and they can create, control and manage the entire asset lifcycles
+              (users have to pay txn fee in form of crypto token (ETH))
+
+Private Blockchain:
+
+ HYperledger ---> Linux and IBM initiative
+             (eliminates the need for crypto tokens, txn fee)
+             (code is open source, smart contract)  
+
+ R3 Corda
+
+ IOTA
+
+ Multichain
+
+
+
+Merkle Hash:
+
+Block can either have 1 transaction or multiple transactions
+
+ blocks are created ----> either for specific period or specific size
+                          (100 txn) or 1 MB size (25 txn)
+
+block1 ---> 100
+
+block2 ---> 50
+
+block3 ----> 75
+
+
+
+Banks 5
+-------------
+
+Bank1 ---> [b1 b2 b3 b4 b5]
+
+Bank2 ---> [b1 b2 b3 b4 b5] ---> goes down
+
+smart contract will produce same result for a transaction for all the nodes in the network
+
+100 tnx ----> 50 txn ----> 5-10 min ---> staled network
+
+txn size (or) no of txn (or) time period 
+
+
+
+block1 ---> 10 txn {t1 t2 t3 t4 ---- t10}
+       ---> creates a merkle hash/root hash ---> ABC12345678910
+
+any node in the network wishes to validate if a block is created correctly
+
+input -- {t1 t2 t3 t4 ---- t10}
+
+ CreateBlock(input) (output)
+
+  {
+    createhash = logic ({t1 t2 t3 t4 ---- t10})
+    storehash  = ABC12345678910
+  }
+
+
+user1 ----> user2 (balance transfer of 100 USD)
+
+node has a smart contract ---> validates balance of user1 (>100 usd)
+ t1--> b1 ---> Chain
+
+Enterprise use cases:
+----------------------
+
+ Onboarding process will happen. Banks will give out their certifictaes, ip adrress, port, dns names
+ banks which are part of this onboarding process will only accept the traffic
+
+network {
+
+ cert, ip, port, dns 
+
+ }
+
+
+
+Token is a digital asset created and managed on the blockchain by emebding functions in a smart contract
+
+
+Babks wish to create a digital token (CBDC)
+
+
+type Token struct {
+
+ Token name   string
+ Token supply int
+ owner        string
+ expiry date  date
+ walletid     string
+ bankname     string
+}
+
+
+type Itoken Interface {
+
+ create()
+ transfer()
+ checkbalance()
+ burn()
+
+}
+
+ ERC20 ---> Fungible Tokens (digital currency)
+  
+ CBDC ---> INR
+
+(token serialnumber 123  = token serialnumber 456)
+
+ 
+
+ERC721 ---> Non Fungible tokens (digital assets)
+
+ token for land registry
+
+type Land struct {
+
+ Land token id
+ Land cordinates 
+ Locality
+ Area
+ sqft
+ price
+ purchased date
+ owner
+ Status
+}
+
+
+
+type Iland interface {
+
+ create()
+ transfer()
+ checkownership()
+
+}
+
+
+ land1 ---> serail number 111 ---> 3 CR
+ land2 ---> serial number 222 ---> 5 CR
+
+
+Database:
+------------
+
+1 usera - balance - 100 USD
+
+txn (usera, 100)
+
+Update operation is performed on the existing data record in the database
+
+1 useraa - balance - 150 USD
+
+
+
+Blockchain:
+-------------
+
+1 usera - balance - 100 USD
+
+txn (usera, 100) -- credit txn
+                 -- debit txn (50)
+
+insert operation is performed on the existing data record in the database
+
+
+1 usera - balance - 100 USD cr
+1 usera - balance - 100 USD cr
+1 usera - balance -  50 USD db
+
+
+
+Token is an object
+Transaction is an action on tht object (credit, debit, getbalance)
+
+
+
+ledger -----> log files/encrypted ---> hashes
+
+
+token:
+
+ land id 123
+ cord  24 26
+ ownnership user A ---> old record
+
+
+usera--->userb
+
+land id 123
+ cord   24 26
+ ownsehrip user b ---> new entry record
+
+
+smartcontract ----> getallhistiry(123)
+            ---->it gives 2 reords as output
+             userA --- old
+             userB --- new
+
+blocks ---> txn details --->
+
+Use Case discussion:
+-------------------------
+
+Big Bazar and Reliance merger
+
+a. convert credit card reward points to Big bazar coupons
+b. users were also purchasing coupons from retail stores
+c. other ways
+
+
+all of these coupons were invalidated/went in vain
+
+on an avg 100 users ----> 2000 INR ---> 2 Lacs on coupons which went wasted
+
+Reliance ----> reward scheme went in vain
+
+blockchian based reward base system:
+-------------------------------------
+
+ query the token id from ledger and validated it status
+
+
+Reward based systems
+Online aucion systems
+NFT market places
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
