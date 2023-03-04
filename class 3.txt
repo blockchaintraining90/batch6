@@ -1,0 +1,268 @@
+Is there any uses case where only digital signature is broadcasted across the network?
+
+
+1) Database vs Digital Ledger
+2) 4 major pillars of blockchain (Cryptography, Ledger, Consensus, P2P NETWORK)
+3) Cryptography ---> symmetric, asymmetric, digital signatures, hashing
+4) Consensus ---> POW, POS, PBFT 
+
+  pow, pos ---> public
+
+pow:
+-----
+all miners will compute to a complex math problem ---> nonce
+random no of zeros to be prefixed to the actual hash --->
+block reward + txn fee to the miner
+
+pos:
+----
+32ETH ---> miner in min staking fee
+
+staking fee: 32eth
+
+validation fee/block ----> 00.05 eth
+
+txn fee = reward
+
+No of miners: (21 miners) ---> binance miners
+
+
+validations times ----> 15 sec - 1 min
+
+
+
+POET ( PROOF of elapsed TIme)
+------------------------------
+
+1. Intel corp ---> they have developed a new hardware (circuit) consensus
+
+[m1, m2, m3, m4, m5] ----> banks for credit score lending use case (cibil)
+
+
+
+blocks are created ??
+
+[100 txn]
+
+Round1 ---> m1 m2 m3 m4 m5 ---> random election --> m3 miner ---> [1 2 3 4 5] --> B1 --> sleep time for 500 ms
+
+Round2 ---> m1 m2 m4 m5    ---> random election --> m2 miner ---> [6 7 8 9 10] --> B2 ---> sleep time for 500 ms (m2 will sign the block data)
+
+Round3 ---> m1 m4 m5 m3    ---> random election --> m5 miner ---> [11 12 13]   --> B3 ---> sleep time
+
+Round4 ---> m1 m4 m3 m2    ---> random election --> m1 miner ---> [21 22 25]    ---> B4 ---> sleep time
+
+softwre cracks ---> manipultae the clocks in the machines ----> SGX ---> software guard extension
+
+
+txn [ t1 ---> U1 (b1) , 100 usd, u2 (b2) ] -----> b1 ---> txn, hash of txn, [minig pool], ]
+
+    [ t2 ---> U3 (b1), 210 usd , u4 (b3)]   ----> b1 ---> txn, (wrong hash),  ---> txn/block
+
+    digital sign ---> atomiciy of txn + hash (data), data ---> 
+
+    [b1 b2 b3 b4 b5]
+
+    [b6] ----> txns  ---> digital sign ---> (pk6, pvt6) ---->  stop/invalidate the txn
+
+
+Genesis block ----> previous hash is empty
+
+{
+
+ network name: banke DLT network
+ participants: b1 b2 b3 b4 b5
+ pub keys    : pk1 pk2 pk3 pk4 pk5
+ ip adress   : 120, 121, 123, 124, 135
+
+}
+
+prev hash as empty ---> reqd details
+
+
+node is a machine ----> any node at some of point oftime ---> miner/validtor/leader
+
+
+entreprise blockhains:
+-------------------------
+
+ledger / onchain txns ---> ledger (hashes)
+
+actual data ---> off chain databases
+
+(casandra) ---> mutiple replicas among the nodes as off chain DB
+
+
+
+
+func Blockchain interfacs {
+
+ createBlock()
+ ProposeBlock()
+ ValidateBlock()
+ AddBlock()
+
+}
+
+
+M1 ---> miner --> Invokes createBlock, ProposeBlock
+
+M2, M3, M4, M5 ---> Invokes ValidateBlock, AddBlock
+
+
+M5 ---> miner --> Invokes createBlock, ProposeBlock
+
+M2, M3, M4, M1 ---> Invokes ValidateBlock, AddBlock
+
+
+
+{
+
+t1 --> 100 btc ---> 8pm ist 3rd march --> 1 btc txn fee ---> b2, b3, b4
+ 
+t2 --> 1000 btc --> 8.30 pm ist 3rd march --> 10 btc fee ---> B1
+
+}
+
+
+D2C ---> btc/eth/sol ---> dex
+
+
+b2b ---> fabric, r3 corda --->
+
+
+Creation of Blockchain network: (identifying participants)
+--------------------------------
+
+1. Creation of nodes/peers
+2. Submission of transactions to the network
+3. Consensus
+4. Ledger
+
+
+New Node Onboarding:
+--------------------
+
+
+
+
+Define rules only if all other banks confirm Yes (bank5)
+ 
+if proposal recvd AND (BANK1, BANK2, BANK3, BANK4) ---> Bank5
+                  3 out of 4 banks
+                  OR ('Bank1', Bank4)
+
+
+
+type nodeOnboarding interface {
+
+  requestNetwork()
+  getGenesis()
+  successValidation()
+  RequestforPreviosu()
+  SyncBlock()
+
+}
+
+
+
+
+Reference links:
+--------------------
+
+https://scrypt.io/
+https://bitcoin.org/bitcoin.pdf
+
+
+Genesis block:
+---------------
+
+{
+  Supply of bitcoins : 21M
+  Network            : Bitcoin core
+  Network Id         : 12345
+  Factor of Block reward : 0.5
+  Difficulty Rate    : 2016
+}     
+
+21M
+
+2009 -- 2023 ----> 19M are in circulation
+
+to mine out entire 21M bitcoin -----> ~ 2140 Year
+
+
+2009 ---> 2013 ----> Minng of single block ----> 50 BTC
+
+2013 ----> 2017 ---> 25 btc
+
+2018 ---- 2022 ----> 12.5 btc
+
+2023 --- 2027 ----> 6.25 btc
+
+2028 - 2032 ----> 3.175 btc
+
+
+2140 ----> mine out all btc
+
+
+
+
+for every block both block fee and txn fee is givenout to miners ---
+
+
+0-2016 ----> {1,2,15,21,99900} linear
+
+
+(exponential change in nonce) 2017-4032 --> {exponential change in nonce}  {2100000, 22, 23, ----- 50M}
+
+
+(exponential change) 4032 - 6048 ----> (100M,,,, 1B) ---> 2040 ---->
+
+
+Wallet address generation:
+----------------------------
+
+ everything is thru cryptgraphy in blockchains
+
+1. create random public and private key pairs
+2. comput sha256 hash(public,private)  ---> random value
+3. comput RIPEMD160 hash(random value) ---> wallet address (bitcoin)
+
+
+Multisignature wallets:  (Uniswap)
+---------------------------------
+
+1. account1 ---->867jljkhljhlkjhlkj (diff private and public key pairs)
+2. account2 ---->9870987hkgjhgljhk  (diff private and public key pairs)
+
+multiple wallets ---> 
+
+
+pattern based attacks that can happen for blockchains ---> wallet1 ---> account1 ---> 4 yrs
+
+
+
+Random words generated -----> friend stage spoon embrace bleak weird ignore cool stool elite guilt fatal
+
+
+
+Exodus:
+----------
+
+1. https://downloads.exodus.com/releases/exodus-linux-x64-23.1.2.deb
+2. Click on the download file, click show in folder
+3. select the file, right click and goto permissions and select "Read and write" options, close
+4. goto terminal
+5. sudo dpkg -i exodus-linux-x64-23.1.2.deb
+
+
+
+
+
+
+
+
+
+
+
