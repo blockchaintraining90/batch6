@@ -1,0 +1,181 @@
+Reference Links:
+-----------------
+
+DAO - https://makerdao.com/en/
+
+DAPPS - https://app.uniswap.org/#/swap
+
+IPFS  - https://ipfs.tech/
+
+
+
+Dapp --> User intefacing applications deplyed on eth blockchain
+
+DAO --> Decentralized autonomous organizations ---> regulatory , Voting use cases,
+
+Company board meeting conducted on DAo to chose wherether to go for selling out shares as part of ressling option
+
+SVB:
+----
+
+ DAO: {member1, mebmer2, member 3 ...... member n}
+
+ input votes from users ----> smart contract
+
+ smarct contract --> will decide upon the final decision
+
+ user identity ---> ethereum account ---> vote casting 
+
+
+
+anything on ETH blockchain cn be refered thru ethereum address
+
+smart contract address ---> 0909879jhbjhjhbjhgh9809809809  
+
+query cust balance of accnt 1 --> 8979870987jhkjhjj
+
+contrat address ----> 0909879jhbjhjhbjhgh9809809809  
+
+                     ----> accnt 1 ---> 100 eth
+
+Nonce is ethereum is a random number generated for each and evry txn in order make it truly random and eleminate the duble spending problem
+
+account1: 12345
+
+ txn1 ---> usra to usrb ---> 10 eth , nonce ---> 7687687 (uuid)
+ txn2 ---> usra to usrc --->  5 eth,  nonce ---> 1266779 (uuid)
+
+
+
+10 txn ----> block 7 + block 8 9 10 11 12 13 14 
+
+10 txn ----> uncle block7 --- no yet confimred to the chain ---> not part of chain and txns
+
+10 txn ---> block 15/16 ----> main ledger
+
+
+miner 5 ---> block 7 (1,2,3,4,5) ---> 7 next block confirmations for majority of miners
+
+miner 8 ---> block 7 (1,2,3,)
+
+other miners -----> majority of miners chose block 7 from miner 5 ---> more txmn
+
+uncle block ----> miner 8 ----> 0.00625 eth
+
+validations:
+-------------
+1. check the ledger balance
+2. validate the adress with public key
+3. validate the recepient adress with public key
+4. validate the status of recepient address
+
+User A transferring 10 ETH to User B ----> Trxn (digitial sign verifications)
+
+User A deploying a smart contract in a network ---> message
+
+
+Swarm protocol  ---> Ledger sharing ---> storage
+
+Whisper protocl ---> Ledger replicating ---> TCP communication
+
+
+Use cases:
+------------
+
+
+B2B ---> enterprise level ---> private/enterprise blockchain ---> hyperledger
+
+  no txn fee, identity are to be revelaed
+
+
+B2C ---> NFT market paces, DEX, DAO ---> ETH, polygon 
+  
+  txn fee exists, identiers are abstracted
+
+
+Gorlei
+
+ropsten
+
+rinkbey 
+
+sepolia ---> pos testnet
+
+
+Ethereum has unlimited supply: 
+
+burning fee ---> where in as part of block creation few ethers will get burn/wiped out
+
+
+genesis block ----> 200M eth
+
+
+block 1 ----> 10000 eth, burn/wipe ---> 0.1% of eth ---> 100
+
+block 100 ----> 10M eth  (200 + 10 = 210M)          ---> 1M
+
+(200 + 10 - 1) == 209M
+
+Burn ---> Miner fee (120 eth, 1 eth)
+
+
+
+100 nodes ----> block 100 ---> 51 confirmations 
+
+ 200 ---> 102-103
+
+block ----> longest chain -> suffixded with 7 other valid blocks
+
+
+
+
+https://github.com/trufflesuite/ganache-ui/releases 
+
+select ganache-2.7.0-linux-x86_64.AppImage
+
+open the folder and click on open terminal
+
+sudo chmod 777 -R ganache-2.7.0-linux-x86_64.AppImage
+
+./ganache-2.7.0-linux-x86_64.AppImage
+
+
+
+step1 --- launch ganache node
+
+setp2 --- launch remix ide
+
+step3 --- choose any smarct contract from contract folder in remix
+
+step4 --- compile the contract
+
+step5 --- deploy the contrct to 'dev - ganache'
+
+
+
+
+User1 ----> token.sol ----> deployment
+
+
+ pass on my accoutn address ---> a123de
+
+ deploying contract         ---> b567fg
+
+(a123de ---> b567fg)
+
+
+
+
+(g123hg ----> b567fg)
+
+if anyone other than me tries to redeploy the contract---> it wil fail sending message that "caller is not owner"
+
+
+can ther be more owenr per contract ?
+
+
+
+
+mule good control sentence corn ill need whale never exit crane kite
+
+ 

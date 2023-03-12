@@ -1,0 +1,281 @@
+
+
+
+step1: 
+
+open the url below and download electrum wallet app image file
+	
+	https://download.electrum.org/4.1.2/ (electrum-4.1.2-x86_64.AppImage)
+        
+        click the show in folder option
+
+        right click and open in terminal  
+
+	sudo chmod 777 electrum-4.1.2-x86_64.AppImage
+ 	
+	./electrum-4.1.2-x86_64.AppImage --testnet
+
+
+
+./electrum-4.1.2-x86_64.AppImage --testnet
+
+https://coinfaucet.eu/en/btc-testnet/
+
+spy outer keep load conduct autumn discover friend wolf voice rib fortune
+
+series trash surge avocado swim curtain wet caution paddle lonely riot card
+
+
+
+BTC ---->  0.000011 btc
+
+mBtc ----> 11 mbtc
+
+0.2 +0.08 ==> 0.28 btc
+
+
+
+Ethereum Blockchain:
+--------------------
+
+Token contract ---> banks for transfer
+
+
+solidity 0.4.8
+
+contract Tokencontract {
+
+ createtoken()
+ transfertoken()
+ checkbalance()
+ duplicate check()
+ addressvalidation()
+
+}
+
+ account id char
+ account balance unit256
+ name       char
+
+
+function createtoken(token id, no of tokens)
+
+{
+
+}
+
+
+}
+
+Deploy --> tokencontract.sol  ---> it generates unique address --->  008098909870878907098798
+
+
+1 contract will  have only 1 address ---->
+
+contract address ---> 008098909870878907098798
+                 ---> 98098-909-09-08-09900980 
+
+{ 
+
+  user1
+
+  user2
+ 
+  user3
+}
+
+
+each and every contract will consume gas fee
+
+100 function calls ---> 100 eth
+
+200 function calls ---> 200 eth
+
+
+Ethereum Virtual Machine:
+-------------------------
+
+Ethereum Blockchains --> Smart contract --> solidyty --> ethereum blockchain --> EVM ---> LInux/windows/OS
+
+Java Virtual Machine --->
+
+
+
+
+
+solidity 0.4.8
+
+contract Tokencontract {
+
+ createtoken()
+ transfertoken()
+ checkbalance()
+ duplicate check()
+ addressvalidation()
+
+}
+
+ account id char
+ account balance unit256
+ name       char
+
+
+function createtoken(token id, no of tokens)
+
+{
+
+}
+
+
+}
+
+
+save as tokencontract.sol
+compile ---> bytecode --->860987909870987-90809=-089=-09-0896753421234567890-09876543234567890-09876543456879809-0
+
+EVM ----> executing instructions
+
+EVM converts the solidity byte code to OPCODE understod by the machine
+
+OP CODE :
+--------
+
+MOVE 'createtoken' to MEMADDRESS1
+MOVE 'transfertoken' to MEMADDRESS2
+
+
+
+5 func ----> 21000
+
+10 func ----> 42000
+
+Gas price is paid in ethers
+
+txn fee = gas fee * gas limit
+
+createtoken ---> 10 read and wrtite operations ---> 10000 gas ----> 10000 * gas price ---> 10000 * 20 ===> 200000
+
+checkbalance ---> 5 read ops ----> 5000 gas ----> 5000 * 20 ==> 10000
+
+
+Travel from MP ---> Guj ---> vehicle
+
+vehicle:
+
+ Fuel  (100 ltrs) - gaslimit (100 instructions in ur smarct contract)
+ Fuel price (110 INR)     - gas price -- 110
+
+txn = 100 * 110 = 110000 (mar 11)
+    = 100 * 150 = 150000 (mar 13)
+
+
+
+
+
+
+
+ERC20 --- fungible token standarsd  ---> crypto currency --> EIP-20
+
+ERC721 --- NFT                       ---> digital assets --> EIP-721
+
+How to write contract:
+------------------------
+
+1. specify license
+2. include the compiler option
+3. specify the contract name
+4. write functions
+5. declare any variables if needed
+
+
+
+
+Byte code:
+----------
+
+608060405234801561001057600080fd5b5061017c806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063ef5fb05b14610030575b600080fd5b61003861004e565b6040516100459190610124565b60405180910390f35b60606040518060400160405280600b81526020017f48656c6c6f20576f726c64000000000000000000000000000000000000000000815250905090565b600081519050919050565b600082825260208201905092915050565b60005b838110156100c55780820151818401526020810190506100aa565b838111156100d4576000848401525b50505050565b6000601f19601f8301169050919050565b60006100f68261008b565b6101008185610096565b93506101108185602086016100a7565b610119816100da565b840191505092915050565b6000602082019050818103600083015261013e81846100eb565b90509291505056fea26469706673582212206651406d9bba8bf795418f2011eddfbbaae8f8d22aba7b969255bb84c6b809f764736f6c634300080d0033
+
+ABI----> contract specification (application binary interface)
+
+
+[
+	{
+		"inputs": [],
+		"name": "sayHello",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	}
+]
+
+
+
+
+
+
+[
+	{
+		"inputs": [],
+		"name": "read",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "num",
+				"type": "uint256"
+			}
+		],
+		"name": "store",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+
+
+
+608060405234801561001057600080fd5b50610150806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806357de26a41461003b5780636057361d14610059575b600080fd5b610043610075565b60405161005091906100a1565b60405180910390f35b610073600480360381019061006e91906100ed565b61007e565b005b60008054905090565b8060008190555050565b6000819050919050565b61009b81610088565b82525050565b60006020820190506100b66000830184610092565b92915050565b600080fd5b6100ca81610088565b81146100d557600080fd5b50565b6000813590506100e7816100c1565b92915050565b600060208284031215610103576101026100bc565b5b6000610111848285016100d8565b9150509291505056fea26469706673582212200004f293625089edf842ab9d2b66b657f5a346ab7f5cf975e8554d407ad3b4ae64736f6c634300080d0033
+
+
+
+gas --->
+
+transaction cost ---> cost/gas associated for txn either read/write to blockchain
+
+execution cost -----> it includes no of operations required for the txn execution
+
+
+
+Storage contract:
+-----------------
+
+1. spdx license
+2. specify the compiler
+3. contract name
+4. function
+5. any variblaes if used
+
+
+
+
+
+
+reference links:
+
+1. https://ethereum.org/en/eips/
