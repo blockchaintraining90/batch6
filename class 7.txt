@@ -1,0 +1,157 @@
+
+creating smart contracts with UI/Remx IDE
+compiling and deploying the contracts manually
+
+CLI ways of creating and deploying applications:
+------------------------------------------------
+
+1. Truffle:
+------------
+ a. Install node version 18 -- Done
+ b. Install truffle         -- Done
+ c. Create a sample truffle project -- Done
+    
+    Project Name ---
+     Folder      ---
+      Source     ---
+        Contract ---
+         test    ---
+
+   mkdir MetaCoin ---> create a folder called MetaCoin
+   cd MetaCoin    ---> open the folder MetaCoin
+   truffle unbox metacoin ---> creates a project structre with sample contrcts
+
+
+ d. Explore the options           --- Done
+     
+    contracts folder will have the smart contracts
+
+    1 eth === 10 ^ 18 gwei
+    
+    nano is a command to open files 
+
+    
+ e. Compile and deploy contracts  --- truffle compile
+
+Refercen --- https://trufflesuite.com/docs/truffle/how-to/install/
+
+Step1: Install node js version 18
+--------
+
+sudo apt-get update
+sudo apt install curl 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+source ~/.bashrc
+nvm install 18
+
+Step2:
+--------
+npm install -g truffle (or) sudo npm install -g truffle
+
+Step3: crete workspace for project
+------
+
+mkdir MetaCoin
+cd MetaCoin
+
+Step4: truffle unbox for standard folder/project structure
+-------
+
+sudo truffle unbox metacoin or truffle unbox metacoin
+
+Step5:
+---------
+
+truffle compile or sudo truffle compile
+
+
+
+2. Hardhat:
+-----------
+
+ Reference Link ---> https://hardhat.org/hardhat-runner/docs/guides/project-setup
+
+ 1. sudo apt-get update
+ 2. npm init -y
+ 2. npm install --save-dev hardhat
+ 3. npx hardhat
+ 4. npx hardhat compile
+
+
+
+GETH Installation:
+------------------
+
+1. sudo apt-get install software-properties-common
+2. sudo add-apt-repository -y ppa:ethereum/ethereum
+3. sudo apt-get update 
+4. sudo apt-get install ethereum
+5. geth version
+
+
+Steps to run a GETH node:
+--------------------------
+
+1. geth --datadir ethdata account new   
+   0x3d2B8532E6f758068402DF5B4C105678C31cc4c7
+2. 
+3. geth --datadir=”ethdata” init genesis.json
+4. geth --datadir=”ethdata” --networkid 15 --nodiscover --rpc --rpcport “8000” --rpccorsdomain “*” --rpcapi “eth,net,web3,miner,debug,personal,rpc” --networkid 1999 console
+5. miner.start()
+6. miner.stop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agenda is to create truffle projc
+
+
+
+prerequisites --- node v18, truffle, solidity compiler
+
+
+Step1: Install node js version 18
+--------
+
+sudo apt-get update
+sudo apt install curl 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+source ~/.bashrc
+nvm install 18
+
+Step2:
+--------
+npm install -g truffle (or) sudo npm install -g truffle
+
+Step3: crete workspace for project
+------
+
+mkdir MetaCoin
+cd MetaCoin
+
+Step4: truffle unbox for standard folder/project structure
+-------
+
+sudo truffle unbox metacoin or truffle unbox metacoin
+
+Step5:
+---------
+
+truffle compile or sudo truffle compile
+
+
+
+
+
