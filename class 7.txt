@@ -92,17 +92,23 @@ GETH Installation:
 Steps to run a GETH node:
 --------------------------
 
-1. geth --datadir ethdata account new   
-2. nano genesis.json
+1. geth --datadir ethdata account new   ---> take backup or copy the address in this step
+2. nano genesis.json                    ---> copy the contents fro, genesis.jso file from github link (https://github.com/blockchaintraining90/batch6)
 3. geth --datadir=”ethdata” init genesis.json
 4. geth --datadir=”ethdata” --networkid 15 --nodiscover --networkid 1999 console
-5. web3.setEtherbase("0x3d2B8532E6f758068402DF5B4C105678C31cc4c7")
-5. miner.start()
-6. miner.stop()
+5. geth attach ipc:/home/corresponding VM name/”ethdata”/geth.ipc
+6. miner.setEtherbase("your account address")
+7. miner.start(8)
+8. web3.eth.getBalance("your account address")
 
-7. geth attach ipc:/home/goudjagadeeshgm/Downloads/”ethdata”/geth.ipc
 
-0x3d2B8532E6f758068402DF5B4C105678C31cc4c7
+Process to get accounts:
+-------------------------
+cd ethdata/
+cd keystore/
+copy the address
+use prefix of 0x
+
 
 
 

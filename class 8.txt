@@ -1,0 +1,113 @@
+Genesis file is the configuration file to start the network for first time
+Genesis block is the first block in the chain/network
+
+
+get Genesis block details
+
+Query blockchain by blockid:
+-----------------------------
+
+block id = 0
+
+func querydata (blocknum int)
+
+
+https://web3js.readthedocs.io/en/v1.8.2/
+
+https://docs.ethers.org/v5/
+
+
+Fungible tokens --> erc20 ---> same token has same face value
+
+Non Fungible tokens --> erc721 --> diff tokens have diff values and attributes
+
+
+
+
+Enterprise Blockchains:
+-----------------------
+
+Reference links ---> https://www.hyperledger.org/
+
+
+ Sawtooth, Iroha, Burrow, Indy, Fabric, Corda
+
+90% ----> Fabric (praticals and labs on fabric)
+
+1. Security
+2. Faster block creation (uses diff consensus)
+3. No anonimity
+4. No Transaction/block fee
+
+
+5 top banks wants to join a CREDIT scoring ledger use case
+
+network details :
+
+{
+ bank1 (sbi), bank2 (axis), bank3 (icici), bank4 (idfc), bank5 (hsbc)
+ VPC network ---->
+}
+
+
+Sawtooth: Linux, IBM and Intel
+---------
+bank1 initiated a txn to store on the ledger for customer 1 data 
+
+{
+
+ validateCust()
+ validateaccountStatus()
+ validatecreditdata()
+ checkanydefaultlonas()
+
+}
+
+
+
+
+Iroha:
+------
+1. PBFT
+2. Light weight client applications
+
+Indy:
+-----
+1. DID's
+
+
+ generateDID (name, age, mobile, mail) -----> DID0980-9890jhghgkh97979
+
+Name: Akshay , Graduate
+
+ DID1 --> college fee reiumbersment program
+ DID2 --> Scholarships from international colleges
+ DID3 --> graduation details for eligible
+
+
+Burrow/Besu:
+-------------
+1. ethereum specific use cases
+2. solidty for smart comtracts
+3. no gas fee/txn fee
+4. can be used by enterprises
+ 
+
+
+
+
+ Ethereum --- solidity, web3.js, ethers.js
+ Indy     --- Decentralized identity (read thru)
+ Fabric   --- 80% of enterprise adopt this (node js, java, golang)
+ Corda    --- (java, kotlin)
+
+
+
+TRuffle:
+---------
+
+sudo truffle migrate inside the Metacoin directory
+
+Hardhat:
+---------
+

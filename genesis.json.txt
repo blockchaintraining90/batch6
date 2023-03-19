@@ -1,5 +1,6 @@
-Create genesis file:
-----------------------
+Create genesis file: (Proof of Work)
+-------------------------------------
+
 {
 "nonce": "0x0000000000000042",
 "timestamp": "0x00",
@@ -19,3 +20,40 @@ Create genesis file:
 "eip158Block": 0
 }
 }
+
+nonce --> 64 bit hash value specified in hexadecimal for genesis block to start with (nonce should start with 98980980987097098798)
+
+timestamp --> indicates when the network started/deployed
+               march 19 2023, 8:55 PM IST ----> 12365468768 ----> 0xx897907987
+
+ParentHash ---> hexadecimal value which says previous block hash
+
+extraData  ---> unique hexadecimal value while starting the network (unique data thru which u can identify the network)
+
+gaslimit   ---> max gaslimit that can be consumed
+
+difficulty ---> random value for each and every block in hexadecimal
+
+mixhash    ---> combination if nonce and difficulty
+
+coinbase   ---> specify the miner address as part of network (10 node address for miner process)
+
+chainid    ---> unique id for each and every blockchain (1--> Maninet, 5--> Goerli, 7545 -- Ganache)
+
+eipblocks  ---> we start the network with latest EIP blocks
+
+
+
+https://www.asynclabs.co/blog/blockchain-development/params-in-ethereum-genesis-block-explained/
+
+process of publishing the changes to protocol is EIP (Ethererum improvement proposals)
+
+2017  ---> ERC20
+
+2019  ---> ERC721
+
+2021  ---> ERC1155
+
+2023  ---> ERC4337
+
+https://eips.ethereum.org/
