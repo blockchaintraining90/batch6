@@ -93,12 +93,16 @@ Steps to run a GETH node:
 --------------------------
 
 1. geth --datadir ethdata account new   
-   0x3d2B8532E6f758068402DF5B4C105678C31cc4c7
-2. 
+2. nano genesis.json
 3. geth --datadir=”ethdata” init genesis.json
-4. geth --datadir=”ethdata” --networkid 15 --nodiscover --rpc --rpcport “8000” --rpccorsdomain “*” --rpcapi “eth,net,web3,miner,debug,personal,rpc” --networkid 1999 console
+4. geth --datadir=”ethdata” --networkid 15 --nodiscover --networkid 1999 console
+5. web3.setEtherbase("0x3d2B8532E6f758068402DF5B4C105678C31cc4c7")
 5. miner.start()
 6. miner.stop()
+
+7. geth attach ipc:/home/goudjagadeeshgm/Downloads/”ethdata”/geth.ipc
+
+0x3d2B8532E6f758068402DF5B4C105678C31cc4c7
 
 
 
