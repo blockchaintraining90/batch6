@@ -1,0 +1,128 @@
+Bitcoin ---> Bitcoin scripts
+Ethereum --> solidity
+Hyperledger Fabric --> Common programming languages for writing applications
+                       (node js, java, golang, python)
+Corda
+PolkaDot
+Solana
+Heder Hashgraph
+
+
+
+
+5 banks wishes to use Fabric for Credit score ledger
+
+HDFC, ICICI, SBI, RBI, IDFC ---->
+
+creditenquiry txn from HDFC ---> {custid:1, custname: Robert, SSN:12345, Score:750)
+ Channels ---> for securely communicating in the network
+               {custid:1, custname: Robert, Private fields(SSN:12345, Score:750) ---> Masked/hashed to store tha ctual data in the network}
+
+
+
+RBI ---> decide upon the onboarding process
+
+HDFC, ICICI, SBI, ABC, IDFC ----> all 5 Banks can decide or only 3 banks can decided or 1 bank can decide
+
+POlicies: get confirmation from HDFCMSP AND IDICIMSP AND SBIMSP AND ABCMSP AND IDFCMSP
+          we can decide like any of the 3 banks can approve the onboarding request ---> 
+
+
+1. (openssl, cert manager, ) Membership (registration and enrollment process to generate their identities) ---> Is the identity process to generate x509 certificates
+2. Chaincode  (business logics written as smart contract on Fabric) ---> docker containers
+
+
+Membership Service: (Fabric-CA)
+
+1. registration
+2. enrollment 
+
+ Thus generating an identity certificate for each and every node in the network
+ 
+Onboard HDFC Bank:
+
+{
+ Bank Common Name : HDFC
+ Bank OU          : Blockchain Dept (Financail Reconciliation)
+ Bank SerialNumber :0809890797989070
+ Bank Locality    : Mumbai
+}
+
+ Fabric-CA 
+
+func createIdentity (identity, cert)
+ {
+
+   cert = createIdentity(identity Struc)
+ }
+
+Membership Service Provider ----> HDFCMSP
+                            ----> ICICMSP
+                            ----> SBIMSP  
+
+to create certificates, we need public and private key ---->
+
+ /public/ ---> public key
+ /private/ --> private key
+ /MSP/     --> Certficate
+
+ROOT CA will help in validating the certficates and MSP for every node
+
+JPMorgan chase ----> parent org ---> root ca
+
+Bank1 ---> channel1 ---> (Bank2, bank3, Bank4)  ---> Ledger1
+
+bank1 ---> channel2 ---> Bank5, bank6, bank7   ---> Ledger13
+
+ Ledger12 + Ledger 13 ---> Global Ledger for Bank1
+
+
+default channel --->
+
+
+
+HDFC Bank: 8 peers
+
+ hdfc.org.peer1, hdfc.org.peer2, hdfc.org.peer3 - endorse peer
+ hdfc.org.peer4, hdfc.org.peer5, hdfc.org.peer6 - commmit peers
+ hdfc.org.peer1.leader,hdfc.org.peer2,          - leader peer
+ hdfc.org.peer1.anchor                          - anchor peer 
+
+endrosement policy ---> AND (hdfc.org.peer1, hdfc.org.peer2, hdfc.org.peer3)
+ 
+regulators ---> RBI, NPCI ---> ordering servcies
+
+5 banks --- a b c d e ---> 5 banks can be part of ordering node Ordering (banka banka bankc bankd banke)
+
+
+RAFT consensus in Fabric
+
+
+sudo rm /usr/local/bin/docker-compose
+sudo apt remove docker-compose
+sudo apt autoremove
+docker-compose version
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+docker-compose version
+
+
+sudo chmod 666 /var/run/docker.sock
+
+sudo curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.2.2 1.4.9
+
+
+cd fabric-samples/test-network
+sudo chmod 666 /var/run/docker.sock
+sudo systemctl unmask docker
+sudo systemctl start docker
+sudo systemctl restart docker.socket docker.service
+sudo chmod 666 /var/run/docker.sock
+sudo ./network.sh up
+sudo docker ps
+
+
+
