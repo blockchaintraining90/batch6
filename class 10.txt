@@ -1,0 +1,222 @@
+Read Write set validations:
+
+Before commiting any data to ledger
+
+1. Read the data from ledger and get is value
+2. compare the Read write values 
+
+Token Id is our key
+
+Token1 - 150 usd
+
+txn1 -> (transfer 100 usd to user2) 
+
+Read set containes (Token1, V1)
+Write set containes (Token1, 150)
+ 
+RW set (Token1, 150, 100, V1)
+
+txn2 -> (transfer 10 usd to user2) 
+
+Read set containes (Token1, V1)
+Write set containes (Token1, 150)
+
+RW set (Token1, 150, 10, V1)
+
+Block1 : {txn1, txn2} ----> only 1 txn will be written to ledger and the 2nd txn is not committed to ledger
+
+
+bank1 ---> {1 2 3} ----> B1 -> 1 2 3 4 5 6 7 8
+bank2 ---> {7 8}   ----> B1 -> 1 2 3 4 5 6 7 8
+bank3 ---> {4 5}   ----> B1 -> 1 2 3 4 5 6 7 8
+bank4 ---> {6}     ----> B1 -> 1 2 3 4 5 6 7 8 
+
+
+ordering service --> B1 ---> {1 2 3 4 5 6 7 8}
+
+https://thesecretlivesofdata.com/raft/
+
+
+5 banks --->
+
+r1 - b1
+r2 - b5
+r3 - b4
+r4 - b2
+r5 - b1
+
+
+5 banks: DLT Credit Ledger
+---------
+
+Cust A --> Bank a --->
+
+data privacy standrads ---> GDPR, EU 
+
+Private Data collections ----> 
+
+(bank A - bank B)
+
+Bank a --> identity files, config files
+
+Bank b --> identity files, config files
+
+Bank c --> identity files, config files
+
+Bank d --> identity files, config files
+
+Bank e --> identity files, config files
+
+Docker compose file will be same for all orgs - network level details
+configtx file will be same for all orgs       - network level details
+crypto config file will be for each and every org - org level details
+
+
+java - HLF
+Solidity - ETH
+
+1tb RAM
+
+security ---> eth ---> solidity ---> contracts underlying will hold some ETHERS ---> domain speific language
+
+              java, golang ---> general purpose program language
+
+
+security, auditability, same data copy/replication
+
+hardhat ---> most widely used ---> CLI hardhat
+
+
+
+CORDA Flows:
+-------------
+
+1. Initiation if txn
+2. Creating payload
+3. Sign th txn with senders priv key
+4. Valudate the txn with senders pub key
+
+
+Consensus:
+-----------
+
+1. Validation Consensus ----> Validating digital signatures for a txn
+
+2. Uniqueness Consensus ----> Checking/eliminating the double spending problem
+
+
+standard edition offering --> Free of usage
+
+Enterprise offering       --> cost is incured on per TXN basis 
+
+bank a ---> 1 2 3
+
+bank B ---> 4 5
+
+bank C ---> 6 7
+
+
+Notary: { 1 2 3 4 5 6 7 }
+
+
+smart contracts ----> kotlin, java
+
+https://developer.r3.com/
+
+https://training.corda.net/
+
+Zero gas:
+---------
+
+usr1 - txn1
+usr2 - txn2
+----
+
+usr100 - txn100
+
+
+1. Network combines multiple txn and send them in a single batch which will translate into very minimal fee on public blockahins
+
+EVM
+----
+Ethereum
+Polygon
+Binance
+
+
+Use Case Discussions:
+----------------------
+
+
+1. Issuance of employee expreicen/degree certificates for faster KYC process for employee onboarding, also elimnating fake degree certficates
+
+private data attributes --- ??? 
+
+{
+  college registration id
+  college
+  course
+  date of issuance
+}
+
+
+Auditing companies, previous employers, Some other foreign institutions (scholarship details)
+
+
+ a. foreign scholarship funds
+ b. previous
+
+public blockchains have overhead of mining fee ----> we can also minimize the txn fee
+
+
+https://docs.openzeppelin.com/learn/sending-gasless-transactions
+
+
+
+2. Air Mile Rewards (transfer of rewards b/w diff organizations)
+
+ DGCA ---> limited 5 entities which enables interreward transfer of points
+
+ usr1 --> 10000 indigo
+      -->  5000 air India
+
+15000 -----> waiver of 75% on booking fee ---> 
+
+airlines ----> banks
+
+
+{
+ cust id 
+ air miles data e1-10
+}
+
+
+3. Land registry on blockchain
+
+ using this platform all other like Housing welfare associations, municipality tax, ease of land transfer
+
+public  ---> any user can query the data with ease
+
+private ---> create a public endpoint URL with some speific access tokens (can be done at application level)
+
+email id and mobile num
+
+http://landowners.abc.com/checkstatus ---> GET / read only operation of blockchain
+
+
+Blockchain Interoperability:
+----------------------------
+ Enables data transfer b/w various blockchain platforms (ether to HLF, HLF to Corda, Corda to Bitcoin)
+
+ Bridges --- area of research
+
+
+
+https://chain.link/cross-chain
+
+4. Storing patient data record for claim processing, duplicate claims elimination
+
+5. bond financing b/w banks
+
+
+6. Food supplychain use case ----> walmart, DHL, 
